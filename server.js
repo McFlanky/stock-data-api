@@ -19,25 +19,6 @@ app.get("/:ticker", async (req, res) => {
       .send({ message: "Please provide api key and ticker" });
   }
 
-  // const res_data = await fetch(
-  //   "https://finance.yahoo.com/quote/MRNA/key-statistics?p=MRNA"
-  // );
-  // const html = await res_data.text();
-  // const $ = cheerio.load(html);
-
-  // return res.send({
-  //   data: $('section[data-test="qsp-statistics"] > div:nth-child(3) tr')
-  //     .get()
-  //     .map((val) => {
-  //       const $ = cheerio.load(val);
-  //       const keyVals = $("td")
-  //         .get()
-  //         .splice(0, 2)
-  //         .map((val) => $(val).text());
-  //       return keyVals;
-  //     }),
-  // });
-
   try {
     const stockInfo = await Promise.all(
       ["key-statistics", "history"].map(async (type) => {
@@ -114,30 +95,6 @@ app.get("/:ticker", async (req, res) => {
               return { ...acc, [curr[0]]: curr[1] };
             }, {});
 
-          // const stats = $(
-          //   'section[data-test="qsp-statistics"] > div:nth-child(3) tr'
-          // )
-          //   .get()
-          //   .map((val) => $(val).text())
-          //   .reduce((acc, curr) => {
-          //     const includedCheck = metrics.reduce((acc, curr2) => {
-          //       if (acc === true) {
-          //         return true;
-          //       }
-          //       return curr.includes(curr2);
-          //     }, false);
-          //     if (includedCheck) {
-          //       const title = metrics.reduce((acc, curr2) => {
-          //         if (curr.includes(curr2)) {
-          //           return curr2;
-          //         }
-          //         return acc;
-          //       }, "");
-          //       return { ...acc, [title]: curr.replace(title, "") };
-          //     } else {
-          //       return acc;
-          //     }
-          //   }, {});
           return { stats };
         }
       })
