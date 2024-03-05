@@ -5,6 +5,12 @@ I wanted to give the backend a crack to grow as a developer and what better way 
 than to utilize RESTful API prinicpals and create a web server to scrape stock data </br>
 from yahoo finances! 
 
+I hope you find the codebase interesting as this is a backend project but make sure to add </br>
+```bash
+mrna?key=cole
+```
+into your browser...
+
 EDIT: I am currently in love with backend development and now am learning Go and Python </br>
 to create a ton of backend projects and CLI tools so await those!
 
@@ -40,8 +46,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/McFlanky/ai-saas-imaginify.git
-cd ai-saas-imaginify
+git clone https://github.com/McFlanky/webscraper-stock-api.git
+cd webscraper-stock-api
 ```
 
 **Installation**
